@@ -40,7 +40,7 @@ go to the share latex directoy and say::
  
   grunt check --force
 
-if everything looks ok say
+if everything looks ok say::
 
   grunt run
 

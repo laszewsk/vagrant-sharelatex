@@ -1,53 +1,58 @@
 #! /bin/sh
 
+# Gregor von Laszewski, laszewski@gmail.com 
+
+#
+# Experimental vagrant that does not yet work, please help
+#
+
+BANNER () {
+    echo "######################################################################"
+    echo $1
+    echo "######################################################################"
+}
 
 #vagrant init precise32
 #vagrant up
 #vagrant ssh
-echo "######################################################################"
-echo "UPDATE"
-echo "######################################################################"
+
+
+
+BANNER "UPDATE"
+
 sudo apt-get update
-echo "######################################################################"
-echo "GIT AND STUFF"
-echo "######################################################################"
+
+BANNER "GIT AND STUFF"
+
 sudo apt-get -y install git-core curl build-essential openssl libssl-dev
-echo "######################################################################"
-echo "NODEJS"
-echo "######################################################################"
+
+BANNER "NODEJS"
+
 sudo apt-get install -y python-software-properties python g++ make
-#sudo apt-get -y install python g++ make
 sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get -y update
 sudo apt-get -y install nodejs
-#echo "######################################################################"
-#echo "npm"
-#echo "######################################################################"
+
+
+#BANNER "npm"
 #sudo apt-get install -y npm
 
-echo "######################################################################"
-echo "LATEX"
-echo "######################################################################"
+BANNER "LATEX and LATEXMK"
+
 sudo apt-get install -y texlive
 
+# this version of latexmk is too old
 sudo apt-get install -y latexmk
 
-
+# installing a newer version
 mkdir ~/bin 
 curl http://mirror.physik-pool.tu-berlin.de/tex-archive/support/latexmk/latexmk.pl > ~/bin/latexmk
 chmod a+x ~/bin/latexmk
 export PATH=~/bin:$PATH
 
-#sudo apt-get -y install unzip
-#mkdir /tmp/a
-#cd /tmp/a
-#wget http://users.phys.psu.edu/~collins/software/latexmk-jcc/latexmk-440.zip
-#unzip latexmk-440.zip 
 
+BANNER "REDIS"
 
-#echo "######################################################################"
-#echo "Redis"
-#echo "######################################################################"
 #sudo apt-get install -y redis-server
 
 mkdir /tmp/b
@@ -70,40 +75,33 @@ sudo chown redis.redis /var/log/redis
 sudo update-rc.d redis-server defaults
 sudo /etc/init.d/redis-server start
 
-echo "######################################################################"
-echo "Mongo"
-echo "######################################################################"
+BANNER "MONGO"
+
 sudo apt-key -y  adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 sudo apt-get -y  update
 sudo apt-get -y --force-yes install mongodb-10gen
 
 
-echo "######################################################################"
-echo "grunt-cli"
-echo "######################################################################"
+BANNER "GRUNT-CLI"
 sudo npm install -g grunt-cli
 
-echo "######################################################################"
-echo "emacs"
-echo "######################################################################"
+BANNER "EMACS"
 sudo apt-get -y install emacs23
 
-echo "######################################################################"
-echo "share latex"
-echo "######################################################################"
+BANNER "SHARE LATEX"
 
 git clone https://github.com/sharelatex/sharelatex.git
 cd sharelatex
 
+cp /vagrant_data/setttings.development.coffee sharelatex/config/settings.development.coffee
 
 npm install
 grunt install
 
+
 grunt check --force
 
+grunt run
 
 
-#grunt run
-
-cp /vagrant_data/setttings.development.coffee sharelatex/config/settings.development.coffee

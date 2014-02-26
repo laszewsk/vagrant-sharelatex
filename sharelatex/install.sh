@@ -1,9 +1,10 @@
 #! /bin/sh
 
+# Apache License
 # Gregor von Laszewski, laszewski@gmail.com 
 
 #
-# Experimental vagrant that does not yet work, please help
+# Shell script for experimental vagrant setup please help improving it
 #
 
 BANNER () {

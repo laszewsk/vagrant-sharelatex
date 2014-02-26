@@ -29,10 +29,12 @@ Edit it with your favorite editor::
 
 
 
-Starting the VM (not yet working, please help)
+Starting the VM 
 ----------------------------------------------
 
-vagrant up
+::
+
+   vagrant up
 
 On your local host you should be able to open the web browser on::
 

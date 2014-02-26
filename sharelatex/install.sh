@@ -100,7 +100,6 @@ cp /vagrant_data/setttings.development.coffee sharelatex/config/settings.develop
 npm install
 grunt install
 
-
 grunt check --force
 
 grunt run

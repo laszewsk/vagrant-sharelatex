@@ -34,27 +34,13 @@ Starting the VM (not yet working, please help)
 
 vagrant up
 
-vagrant ssh
-
-go to the share latex directoy and say::
- 
-  grunt check --force
-
-if everything looks ok say::
-
-  grunt run
-
-Idieally this shoudl start up all of the services automatically and configure things correctly, however for some reason it does not work
-
-Once this works We will move the steps in the install.sh script.
-
-
 On your local host you should be able to open the web browser on::
 
   http://localhost:3000
 
 
-However it does not work :(
+However, what happens next I do not know. Also it may be that redis
+and other services may need additional configuration ...
 
 If you know how to fix this, please contact me.
 

@@ -1,6 +1,13 @@
 vagrant-sharelatex
 ==================
 
+Get the code and Setup
+-------
+::
+
+  git clone git@github.com:laszewsk/vagrant-sharelatex.git
+
+
 ::
 
   mkdir data
@@ -8,6 +15,18 @@ vagrant-sharelatex
 place your setttings.development.coffee in the data dir::
 
   edit data/setttings.development.coffee
+
+You can find an example at
+
+* https://github.com/sharelatex/sharelatex/blob/master/config/settings.development.coffee.example
+
+Make sure if you copy it to rename it to setttings.development.coffee
+and fill out the AWS credentials. Otherwise the install does not
+complete.
+
+
+Starting the VM (not yet working, please help)
+----------------------------------------------
 
 vagrant up
 

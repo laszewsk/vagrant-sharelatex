@@ -34,7 +34,15 @@ Starting the VM (not yet working, please help)
 
 vagrant up
 
+vagrant ssh
+
+go to the share latex directoy and say::
+
+  grunt run
+
 Idieally this shoudl start up all of the services automatically and configure things correctly, however for some reason it does not work
+
+
 
 On your local host you should be able to open the web browser on::
 

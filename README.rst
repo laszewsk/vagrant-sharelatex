@@ -10,19 +10,23 @@ Get the code and Setup
 
 ::
 
+  cd sharelatex
   mkdir data
 
-place your setttings.development.coffee in the data dir::
-
-  edit data/setttings.development.coffee
+place your setttings.development.coffee in the data dir
 
 You can find an example at
 
 * https://github.com/sharelatex/sharelatex/blob/master/config/settings.development.coffee.example
 
-Make sure if you copy it to rename it to setttings.development.coffee
+Make sure if you rename it to setttings.development.coffee
 and fill out the AWS credentials. Otherwise the install does not
 complete.
+
+Edit it with your favorite editor::
+
+  emacs data/setttings.development.coffee
+
 
 
 Starting the VM (not yet working, please help)
